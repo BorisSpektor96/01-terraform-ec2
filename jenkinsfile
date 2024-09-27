@@ -2,26 +2,26 @@ pipeline {
     agent any
 
     environment {
-        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID') 
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY') 
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/BorisSpektor96/01-terraform-ec2.git' // Replace with your repo URL
+                git 'https://github.com/BorisSpektor96/01-terraform-ec2.git' // Clone your repository
             }
         }
 
         stage('Terraform Init') {
             steps {
-                sh 'terraform init'
+                sh 'terraform init' // Initialize Terraform
             }
         }
 
         stage('Terraform Plan') {
             steps {
-                sh 'terraform plan'
+                sh 'terraform plan' // Run Terraform plan
             }
         }
     }
