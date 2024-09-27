@@ -9,19 +9,29 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/BorisSpektor96/01-terraform-ec2.git' // Clone your repository
+                echo 'Cloning the Repo'
+                git 'https://github.com/BorisSpektor96/01-terraform-ec2.git' 
             }
         }
 
         stage('Terraform Init') {
             steps {
-                sh 'terraform init' // Initialize Terraform
+                echo ' Terraform init'
+                sh 'terraform init' 
             }
         }
 
         stage('Terraform Plan') {
             steps {
-                sh 'terraform plan' // Run Terraform plan
+                echo 'Terraform plan'
+                sh 'terraform plan' 
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                echo 'Terraform apply auto'
+                sh 'terraform apply -auto-approve' 
             }
         }
     }
