@@ -29,3 +29,9 @@ variable "ebs_volume_type" {
   default     = "gp2"
 }
 
+variable "AWS_ACCESS_KEY_ID" {
+  description = "aws access key"
+}
+variable "AWS_SECRET_ACCESS_KEY" {
+  description = "aws secret key"
+}
