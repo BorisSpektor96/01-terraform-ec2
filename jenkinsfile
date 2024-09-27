@@ -10,7 +10,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo 'Cloning the Repo'
-                git 'https://github.com/BorisSpektor96/01-terraform-ec2.git' 
+                git branch: 'main', https://github.com/BorisSpektor96/01-terraform-ec2.git' 
             }
         }
 
